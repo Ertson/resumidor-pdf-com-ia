@@ -2,7 +2,7 @@ import streamlit as st
 import fitz  # PyMuPDF
 from transformers import pipeline
 
-def extrair_texto_pdf(uploaded_file)
+def extrair_texto_pdf(uploaded_file):
     with fitz.open(stream=uploaded_file.read(), filetype=pdf) as doc
         texto = 
         for pagina in doc
