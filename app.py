@@ -75,3 +75,5 @@ if "doc_text" in st.session_state:
         with st.spinner("Consultando IA…"):
             answer = ask_gpt(user_q, st.session_state.doc_text)
         st.session_state.messages.append(("assistant", answer))
+        /app.py
+/documento.pdf
