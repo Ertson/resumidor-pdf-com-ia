@@ -65,3 +65,23 @@ if "doc_text" in st.session_state:
             answer = ask_gpt(user_q, st.session_state.doc_text)
         st.session_state.messages.append(("assistant", answer))
         st.chat_message("assistant").write(answer)
+        def ask_gpt(question: str, context: str) -> str:
+    system_prompt = (
+        "Você é um assistente que responde com base no PDF fornecido. "
+        "Se a resposta exata não estiver no texto, responda algo semelhante ou relacionado ao tema. "
+        "Se não conseguir, sugira outro tópico útil para o usuário e explique por quê."
+    )
+
+    user_prompt = f"Documento:\n{context}\n\nPergunta do usuário: {question}"
+
+    response = client.chat.completions.create(
+        model=MODEL_NAME,
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt},
+        ],
+        max_tokens=512,
+        temperature=0.3,  # um pouco mais criativo
+    )
+    return response.choices[0].message.content.strip()
+
