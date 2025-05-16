@@ -1,4 +1,1 @@
 streamlit
-transformers
-sentencepiece
-PyMuPDF
