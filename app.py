@@ -15,7 +15,7 @@ def resumir_texto(texto, modelo, tamanho_maximo=1000)
     return  .join(resumos)
 
 st.set_page_config(page_title=Resumidor de PDF com IA, layout=centered)
-st.title(📄 Resumidor de PDF com Inteligência Artificial)
+st.title("Resumidor de PDF com Inteligência Artificial")
 st.write(Faça upload de um PDF e veja o resumo automático gerado por IA.)
 
 uploaded_file = st.file_uploader(Faça upload do seu arquivo PDF, type=pdf)
