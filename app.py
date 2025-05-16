@@ -35,5 +35,5 @@ if uploaded_file is not None
         resumo = resumir_texto(texto, modelo_resumo)
         st.success(Resumo gerado com sucesso!)
 
-        st.subheader(📝 Resumo do documento)
+st.subheader("Resumo do documento")
         st.write(resumo)
